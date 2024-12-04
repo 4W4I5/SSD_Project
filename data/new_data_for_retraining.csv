@@ -1,0 +1,11 @@
+SELECT * FROM users WHERE username = 'admin' --,2
+SELECT * FROM users WHERE username = 'admin' --,0
+SELECT * FROM users WHERE username = 'admin' --,2
+SELECT * FROM users WHERE username = 'admin' --,2
+SELECT * FROM users WHERE username = 'admin' --,0
+SELECT * FROM users WHERE username = 'admin' --,2
+SELECT * FROM users WHERE username = 'admin' --,0
+SELECT * FROM users WHERE username = 'admin' --,0
+SELECT * FROM users WHERE username = 'admin' --,0
+SELECT * FROM users WHERE username = 'admin' --,2
+SELECT * FROM users WHERE username = 'admin' --,0

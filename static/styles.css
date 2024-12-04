@@ -1,0 +1,76 @@
+body {
+  /* font-family: Arial, sans-serif; */
+  margin: 0;
+  padding: 0;
+  background-color: #121212; /* Dark background color */
+  color: #fff; /* Light text color for contrast */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header,
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+}
+
+main {
+  padding: 1em;
+  flex: 1; /* Ensures main content takes up available space */
+}
+
+h1,
+h2 {
+  color: #fff; /* Light text color for headings */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+  background-color: #1e1e1e; /* Dark background for table */
+  color: #fff; /* Light text color for table */
+}
+
+th,
+td {
+  border: 1px solid #333;
+  padding: 0.5em;
+  text-align: left;
+  color: #fff; /* Light text color for contrast */
+}
+
+th {
+  background-color: #444; /* Darker background for table headers */
+  color: #fff; /* Light text color for contrast */
+}
+
+tr:nth-child(even) {
+  background-color: #2a2a2a; /* Slightly lighter background for even rows */
+  color: #fff; /* Light text color for contrast */
+}
+
+tr:hover {
+  background-color: #333; /* Highlight row on hover */
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  cursor: inherit;
+  display: block;
+}

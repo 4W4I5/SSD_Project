@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block content %}
+<h2>Upload Source Code</h2>
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group mb-3">
+        <span class="form-group btn btn-primary btn-file">
+            Browse <input type="file" class="form-control-file" name="code_file" accept=".c,.cpp,.py,.csv" id="fileInput" />
+        </span>
+    </div>
+    <button type="submit" class="btn btn-secondary form-group" id="submitButton" disabled>Upload and Scan</button>
+</form>
+
+<script>
+    document.getElementById('fileInput').addEventListener('change', function() {
+        var submitButton = document.getElementById('submitButton');
+        if (this.files.length > 0) {
+            submitButton.disabled = false;
+            submitButton.classList.remove('btn-secondary');
+            submitButton.classList.add('btn-primary');
+        } else {
+            submitButton.disabled = true;
+            submitButton.classList.remove('btn-primary');
+            submitButton.classList.add('btn-secondary');
+        }
+    });
+</script>
+{% endblock %}

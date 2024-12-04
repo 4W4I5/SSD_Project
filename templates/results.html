@@ -1,0 +1,52 @@
+<!-- templates/results.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Scan Results</title>
+        <link
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='styles.css') }}"
+        />
+    </head>
+    <body>
+        <h1>Scan Results</h1>
+        <!-- Home button, redirects to /upload -->
+        <a href="{{ url_for('upload_code') }}" class="btn btn-primary d-inline-block">Home</a>
+        <a
+            href="{{ url_for('download_report', scan_id=scan_id) }}"
+            class="btn btn-primary d-inline-block"
+            >Download Report</a
+        >
+        {% if results %}
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Issue</th>
+                    <th>Severity</th>
+                    <th>Line Number</th>
+                    <th>Suggestion</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ result.get('issue', 'N/A') }}</td>
+                    <td>{{ result.get('severity', 'N/A') }}</td>
+                    <td>{{ result.get('line_number', 'N/A') }}</td>
+                    <td>{{ result.get('suggestion', 'N/A') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No vulnerabilities found.</p>
+        {% endif %}
+    </body>
+</html>

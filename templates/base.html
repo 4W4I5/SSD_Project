@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Secure Code Review Tool</title>
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>AI-Based Secure Code Review Tool</h1>
+      <p style="text-align: right;">
+        i212764 - Awais Shahid <br>i211580 - Muhammad Qasim <br> k214779 - Taha Qaisar
+      </p>
+    </header>
+    </header>
+    <main>{% block content %}{% endblock %}</main>
+    <footer>
+      <p style="text-align: left;">&copy; 2024 Secure Code Review Tool | Secure Software Design Project</p>
+    </footer>
+  </body>
+</html>
