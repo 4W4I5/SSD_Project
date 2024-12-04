@@ -28,7 +28,7 @@ jobs:
           pip install -r requirements.txt
       - name: Run Bandit
         run: |
-          mkdir -p auto
+          mkdir /auto
           bandit -r vuln.py > auto/bandit_report.txt
       - name: Upload analysis results
         uses: actions/upload-artifact@v3
