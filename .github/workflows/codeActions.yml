@@ -25,22 +25,15 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
-      # - name: Run Additional Analysis with Groq API
-      #   env:
-      #     GROQ_API_KEY: "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"
-      #   run: |
-      #     python analyze_with_groq.py
-
+      - name: Run Bandit
+        run: |
+          bandit -r auto -f txt -o auto/bandit_report.txt
       - name: Upload analysis results
         uses: actions/upload-artifact@v3
         with:
           name: security-analysis-results
           path: |
             auto/bandit_report.txt
-
-      # - name: Display Groq Report
-      #   run: cat auto/groq_report.txt
 
       - name: Display Bandit Report
         run: cat auto/bandit_report.txt
