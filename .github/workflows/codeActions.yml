@@ -37,7 +37,6 @@ jobs:
         with:
           name: security-analysis-results
           path: |
-            # auto/groq_report.txt
             auto/bandit_report.txt
 
       # - name: Display Groq Report
